@@ -1,12 +1,15 @@
 <?php
-include 'vendor/autoload.php';
+require_once  'vendor/autoload.php';
 
 use Ehann\RediSearch\Index;
 use Ehann\RediSearch\Fields\TextField;
 use Ehann\RediSearch\Fields\NumericField;
+use Ehann\RediSearch\Redis\RedisClient;
+
+$redis = new RedisClient('Redis', '127.0.0.1', 6379, 0, '');
 
 
-$bookIndex = new Index();
+$bookIndex = new Index($redis,'');
 
 $bookIndex->addTextField('title')
 ->addTextField('author')
