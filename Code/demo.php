@@ -2,6 +2,8 @@
 include 'vendor/autoload.php';
 
 use Ehann\RediSearch\Index;
+use Ehann\RediSearch\Fields\TextField;
+use Ehann\RediSearch\Fields\NumericField;
 
 
 $bookIndex = new Index();
