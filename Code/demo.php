@@ -1,6 +1,8 @@
 <?php
 include 'vendor/autoload.php';
 
+use Ehann\RediSearch\Index;
+
 
 $bookIndex = new Index();
 
