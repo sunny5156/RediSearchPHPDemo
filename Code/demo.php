@@ -1,5 +1,5 @@
 <?php
-require_once 'vendor/autoload.php';
+include 'vendor/autoload.php';
 
 
 $bookIndex = new Index();
