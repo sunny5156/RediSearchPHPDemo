@@ -1,12 +1,12 @@
 <?php
-require_once  './vendor/autoload.php';
+require_once  "./vendor/autoload.php";
 
 use Ehann\RediSearch\Index;
 use Ehann\RediSearch\Fields\TextField;
 use Ehann\RediSearch\Fields\NumericField;
 use Ehann\RediSearch\Redis\RedisClient;
 
-$redis = new RedisClient('Redis', '127.0.0.1', 6379, 0, '');
+$redis = new RedisClient('Redis', '106.75.93.100', 6379, 0, '');
 
 
 $bookIndex = new Index($redis,'books');
@@ -18,24 +18,24 @@ $bookIndex->addTextField('title')
 ->create();
 
 
-$bookIndex->add([
-    new TextField('title', 'PHP'),
-    new TextField('author', 'sunny5156'),
-    new NumericField('price', 9.99),
-    new NumericField('stock', 231),
-]);
-$bookIndex->add([
-    new TextField('title', 'PHP7编程思想'),
-    new TextField('author', 'sunny5156'),
-    new NumericField('price', 59.99),
-    new NumericField('stock', 245),
-]);
-$bookIndex->add([
-    new TextField('title', 'Java核心开发'),
-    new TextField('author', 'yuxang'),
-    new NumericField('price', 34),
-    new NumericField('stock', 123),
-]);
+// $bookIndex->add([
+//     new TextField('title', 'PHP'),
+//     new TextField('author', 'sunny5156'),
+//     new NumericField('price', 9.99),
+//     new NumericField('stock', 231),
+// ]);
+// $bookIndex->add([
+//     new TextField('title', 'PHP7编程思想'),
+//     new TextField('author', 'sunny5156'),
+//     new NumericField('price', 59.99),
+//     new NumericField('stock', 245),
+// ]);
+// $bookIndex->add([
+//     new TextField('title', 'Java核心开发'),
+//     new TextField('author', 'yuxang'),
+//     new NumericField('price', 34),
+//     new NumericField('stock', 123),
+// ]);
 
 
 $result = $bookIndex->search('sunny*');
